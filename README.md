@@ -1,6 +1,5 @@
 # 16-bit-risc-processor
 >A 16-bit Reduced Instruction Set Computing(RISC) processor designed using the Verilog harware description language(HDL). The design was implemented on a Nexys 4 DDR board using the Xilinx Artix-7 Field Programabble Gate Array(FPGA). The processor is capable of fetching and executing a set of 16-bit machine instructions. 
-
 #### Memory Structure
 * 256 x 16 address space
 * Each memory location contains one 16-bit word
@@ -15,6 +14,48 @@
 2. Register 
 3. Register Indirect 
 4. PC relative
+#### Instruction Opcodes
+
+| opcode         | dest_reg      | src1_reg       | src2_reg      |
+| :-------------:|:-------------:| :-------------:|:-------------:| 
+| `bits 15 -> 9` | `bits 8 -> 6` |`bits 5 -> 3`   |`bits 2 -> 0`  |
+
+`Double-Source Operands`
+
+| Name          | Opcode        | 
+| ------------- |:-------------:| 
+| add           | 111-0000      | 
+| sub           | 111-0001      | 
+| cmp           | 111-0010      | 
+
+`Single-Source Operands`
+
+| Name          | Opcode        | 
+| ------------- |:-------------:| 
+| mov           | 111-0011      | 
+| shl           | 111-0100      | 
+| shr           | 111-0101      | 
+| inc           | 111-0110      | 
+| dec           | 111-0111      | 
+
+`Load, Store & Halt`
+
+| Name          | Opcode        | 
+| ------------- |:-------------:| 
+| load          | 111-1000      | 
+| store         | 111-1001      | 
+| loadi         | 111-1010      | 
+| halt          | 111-1011      | 
+
+`Jumps`
+
+| Name          | Opcode        | 
+| ------------- |:-------------:| 
+| je            | 111-1100      | 
+| jne           | 111-1101      | 
+| jc            | 111-1110      | 
+| jmp           | 111-1111       | 
 
 ### Schematic:
-![](301_RISC_Processor--Data_and_Control_Paths_Diagram.jpg)
+![](schematic.jpg)
+
