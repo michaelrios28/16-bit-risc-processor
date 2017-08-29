@@ -1,5 +1,7 @@
 # 16-bit-risc-processor
 >A 16-bit Reduced Instruction Set Computing(RISC) processor designed using the Verilog harware description language(HDL). The design was implemented on a Nexys 4 DDR board using the Xilinx Artix-7 Field Programabble Gate Array(FPGA). The processor is capable of fetching and executing a set of 16-bit machine instructions. 
+### Schematic:
+![](schematic.jpg)
 #### Memory Structure
 * 256 x 16 address space
 * Each memory location contains one 16-bit word
@@ -56,6 +58,5 @@
 | jc            | 111-1110      | 
 | jmp           | 111-1111       | 
 
-### Schematic:
-![](schematic.jpg)
+
 
